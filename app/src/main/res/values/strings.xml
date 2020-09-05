@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NFCWriter</string>
+    <string name="select">Select File</string>
+    <string name="mime">text/plain</string>
+    <string name="compression">ZLIB Compression</string>
+    <string name="flash">Flash</string>
+</resources>
