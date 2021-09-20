@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.nfc.*
 import android.nfc.tech.Ndef
+import android.os.Build
 import java.io.IOException
 
 class Nfc(context: Context) {
@@ -23,7 +24,7 @@ class Nfc(context: Context) {
         Intent(context, context.javaClass)
             .addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or
                     Intent.FLAG_ACTIVITY_CLEAR_TOP),
-        0
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) PendingIntent.FLAG_IMMUTABLE else 0
     )
 
     /* Get the byte contents of a Nfc tag */
